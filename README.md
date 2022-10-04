@@ -19,7 +19,7 @@ The application is tested on Windows 10+ systems and is meant to work only on 64
 * [Node.js](https://nodejs.org/);
 * [systeminformation](https://systeminformation.io/);
 * [Electron](https://www.electronjs.org/);
-* [Electron-Forge](https://www.electronforge.io/).
+* [Electron-Forge](https://www.electronforge.io/);
 * Inno Setup Compiler.
 
 ## How To Launch
