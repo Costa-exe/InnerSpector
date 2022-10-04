@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  background-color: #a5a5a5;
+  color: #000000;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 10px;
+}
+html::-webkit-scrollbar-track {
+  background: #000000;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #787878;
+  border-radius: 5px;
+  border: 0px solid #000000;
+}
+
+#navMenu {
+  color: #ffffff;
+  background-color: #141414;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  overflow-y: auto;
+  margin-bottom: 50px;
+}
+#navMenu::-webkit-scrollbar {
+  width: 5px;
+}
+#navMenu::-webkit-scrollbar-track {
+  background: #000000;
+}
+#navMenu::-webkit-scrollbar-thumb {
+  background-color: #787878;
+  border-radius: 5px;
+  border: 0px solid #000000;
+}
+
+.option {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 400;
+}
+
+#footer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6e6e6;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 150px;
+}
+#footer > a {
+  text-decoration: none;
+}
+
+.key {
+  display: flex;
+  justify-content: right;
+}
+
+.prop {
+  display: grid;
+  width: auto;
+  height: auto;
+  font-size: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+}
+.prop:nth-child(odd) {
+  background-color: rgb(177, 177, 177);
+}
+.prop:nth-child(even) {
+  background-color: #d1d0d0;
+}
+
+#general {
+  position: absolute;
+  left: 150px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #252525;
+}
+
+.cont {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  border-bottom: 2px solid #252525;
+  margin-left: 5px;
+}
+.cont:last-child {
+  border-bottom: 0;
+}
+.cont > h4 {
+  margin-bottom: 5px;
+}
+
+.toggle {
+  padding-left: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.toggle[data-active=active] {
+  background-color: #888888;
+  color: #000000;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-weight: 700;
+}
+.toggle[data-active=inactive]:hover {
+  font-weight: 700;
+}
+
+.value {
+  display: flex;
+  justify-content: left;
+  padding-left: 5px;
+  font-weight: 700;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,144 @@
+@import './reset';
+@import './fonts';
+@import './colors';
+@import './generals';
+
+
+html {
+    font-family: $fontStyle;
+    font-size: map-get($fontSize , regular );
+    background-color: $standardBackground;
+    color: #000000;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #000000;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #787878;
+        border-radius: 5px;
+        border: 0px solid #000000;
+    }
+}
+
+#navMenu {
+    color: #ffffff;
+    background-color: $black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    overflow-y: auto;
+    margin-bottom: 50px;
+
+    &::-webkit-scrollbar {
+            width: 5px;
+        }
+    &::-webkit-scrollbar-track {
+        background: #000000;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #787878;
+        border-radius: 5px;
+        border: 0px solid #000000;
+    }
+}
+
+.option {
+    font-size: map-get($fontSize , regular );
+    padding: $spacing;
+    font-weight: map-get($fontWeights , thin );
+}
+
+#footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6e6e6;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 150px;
+
+    & > a {
+        text-decoration: none;
+    }
+}
+
+.key {
+    display: flex;
+    justify-content: right;
+}
+
+.prop {
+    display: grid;
+    width: auto;
+    height: auto;
+    font-size: map-get($fontSize , regular );
+    grid-template-columns: repeat(2, 1fr);
+    padding: $spacing;
+
+    &:nth-child(odd) {
+        background-color: rgb(177, 177, 177);
+    }
+    &:nth-child(even) {
+        background-color: #d1d0d0;
+    }
+}
+
+#general {
+    position: absolute;
+    left: 150px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #252525;
+}
+
+.cont {
+    padding-bottom: $spacing;
+    padding-left: $spacing * 2;
+    font-size: map-get($fontSize, small );
+    border-bottom: 2px solid #252525;
+    margin-left: 5px;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    & > h4 {
+        margin-bottom: 5px;
+    }
+}
+
+.toggle {
+    padding-left: $spacing;
+    font-weight: map-get($fontWeights , thin );
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    &[data-active="active"] {
+        background-color: #888888;
+        color: #000000;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-weight: map-get($fontWeights , bold );
+    }
+
+    &[data-active="inactive"]:hover {
+        font-weight: map-get($fontWeights , bold );
+    }
+}
+
+.value {
+    display: flex;
+    justify-content: left;
+    padding-left: 5px;
+    font-weight: map-get($fontWeights , bold);
+}

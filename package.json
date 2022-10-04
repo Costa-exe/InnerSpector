@@ -1,0 +1,64 @@
+{
+  "name": "innerspector",
+  "version": "2.0.0",
+  "description": "windows electron app to retrive system specs",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Costa-exe/InnerSpector.git"
+  },
+  "author": "Fabio Cosentino",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Costa-exe/InnerSpector/issues"
+  },
+  "homepage": "https://github.com/Costa-exe/InnerSpector#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.66",
+    "@electron-forge/maker-deb": "^6.0.0-beta.66",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.66",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.66",
+    "@electron-forge/maker-zip": "^6.0.0-beta.66",
+    "@types/electron": "^1.6.10",
+    "electron": "^21.0.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "systeminformation": "^5.12.6"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./src/imgs/icon.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "innerspector"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
