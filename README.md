@@ -11,6 +11,8 @@
 InnerSpector is a Windows app, realized with Electron, that can be used to retrive informations about the system's hardware and software (CPU, GPU, RAM, BIOS, Baseboard and OS).
 The application is tested on Windows 10+ systems and is meant to work only on 64 bit architectures.
 
+![App-Screen](./src/imgs/repo-only/screen2.png)
+
 ## Technologies
 
 * HTML;
