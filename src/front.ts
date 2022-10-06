@@ -136,6 +136,7 @@ function mainLoader () : void {
     const biosInfo : HTMLDivElement = document.getElementById("biosInfo")! as HTMLDivElement;
     const bios : string = '../../../tmp/bios.json';
     const ramInfo : HTMLDivElement = document.getElementById("ram")! as HTMLDivElement;
+    const ramInfoGen : HTMLDivElement = document.getElementById("genRam")! as HTMLDivElement;
     const ramGeneral : string = '../../../tmp/generalMem.json';
     const banks : string = '../../../tmp/banks.json';
 
@@ -144,7 +145,7 @@ function mainLoader () : void {
     retriveBranding("block", os, sys, "os", retriveGeneral, "OS");
     retriveBranding("none", board, boardInfo, "board", retriveGeneral, "Manufacturer", "Model");
     retriveBranding("none", bios, biosInfo, "bios", retriveGeneral, "Vendor", "Version");
-    retriveBranding("none", ramGeneral, ramInfo, "ramGen", retriveGeneral, "General");
+    retriveBranding("none", ramGeneral, ramInfoGen, "ramGen", retriveGeneral, "General");
     retriveBranding("none", banks, ramInfo, "ramBank", retriveGeneral, "Bank", "Manufacturer");
     
 }

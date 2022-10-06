@@ -143,6 +143,7 @@ function mainLoader() {
     const biosInfo = document.getElementById("biosInfo");
     const bios = '../../../tmp/bios.json';
     const ramInfo = document.getElementById("ram");
+    const ramInfoGen = document.getElementById("genRam");
     const ramGeneral = '../../../tmp/generalMem.json';
     const banks = '../../../tmp/banks.json';
     retriveBranding("none", cpu, cpus, "cpu", retriveGeneral, "Manufacturer", "Brand");
@@ -150,7 +151,7 @@ function mainLoader() {
     retriveBranding("block", os, sys, "os", retriveGeneral, "OS");
     retriveBranding("none", board, boardInfo, "board", retriveGeneral, "Manufacturer", "Model");
     retriveBranding("none", bios, biosInfo, "bios", retriveGeneral, "Vendor", "Version");
-    retriveBranding("none", ramGeneral, ramInfo, "ramGen", retriveGeneral, "General");
+    retriveBranding("none", ramGeneral, ramInfoGen, "ramGen", retriveGeneral, "General");
     retriveBranding("none", banks, ramInfo, "ramBank", retriveGeneral, "Bank", "Manufacturer");
 }
 window.onload = mainLoader;
