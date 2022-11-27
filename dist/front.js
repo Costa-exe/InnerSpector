@@ -82,6 +82,25 @@ function switchContent() {
             options[i].dataset.active = "inactive";
         }
     }
+    overlayOff();
+}
+function overlayOn() {
+    const infoTitleDisplay = document.getElementById("infoTitleDisplay");
+    const infoTitleDiv = document.getElementById("infoTitleDiv");
+    const infoTitle = document.getElementById("infoTitle");
+    if (this.dataset.active == "inactive") {
+        infoTitleDisplay.style.display = "block";
+        infoTitleDiv.style.display = "block";
+        infoTitle.innerHTML = this.innerHTML;
+    }
+}
+function overlayOff() {
+    const infoTitleDisplay = document.getElementById("infoTitleDisplay");
+    const infoTitleDiv = document.getElementById("infoTitleDiv");
+    const infoTitle = document.getElementById("infoTitle");
+    infoTitleDisplay.style.display = "none";
+    infoTitleDiv.style.display = "none";
+    infoTitle.innerHTML = "";
 }
 function retriveBranding(z, a, b, e, f, c, d) {
     const req = new XMLHttpRequest();
@@ -95,6 +114,8 @@ function retriveBranding(z, a, b, e, f, c, d) {
             let h4 = document.createElement("h4");
             let h5 = document.createElement("h5");
             h5.onclick = switchContent;
+            h5.onmouseover = overlayOn;
+            h5.onmouseout = overlayOff;
             for (let [key, value] of Object.entries(actual)) {
                 //navbar
                 if (d) {
@@ -133,19 +154,19 @@ function retriveBranding(z, a, b, e, f, c, d) {
 }
 function mainLoader() {
     const cpus = document.getElementById("cpus");
-    const cpu = '../../../tmp/cpuInfo.json';
+    const cpu = '../tmp/cpuInfo.json';
     const gpus = document.getElementById("gpus");
-    const gpu = '../../../tmp/gpuInfo.json';
+    const gpu = '../tmp/gpuInfo.json';
     const sys = document.getElementById("sysInfo");
-    const os = '../../../tmp/os.json';
+    const os = '../tmp/os.json';
     const boardInfo = document.getElementById("boardInfo");
-    const board = '../../../tmp/board.json';
+    const board = '../tmp/board.json';
     const biosInfo = document.getElementById("biosInfo");
-    const bios = '../../../tmp/bios.json';
+    const bios = '../tmp/bios.json';
     const ramInfo = document.getElementById("ram");
     const ramInfoGen = document.getElementById("genRam");
-    const ramGeneral = '../../../tmp/generalMem.json';
-    const banks = '../../../tmp/banks.json';
+    const ramGeneral = '../tmp/generalMem.json';
+    const banks = '../tmp/banks.json';
     retriveBranding("none", cpu, cpus, "cpu", retriveGeneral, "Manufacturer", "Brand");
     retriveBranding("none", gpu, gpus, "gpu", retriveGeneral, "Vendor", "Model");
     retriveBranding("block", os, sys, "os", retriveGeneral, "OS");

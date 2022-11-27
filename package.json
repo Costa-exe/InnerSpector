@@ -1,6 +1,6 @@
 {
   "name": "innerspector",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "windows electron app to retrive system specs",
   "main": "./dist/index.js",
   "scripts": {

@@ -61,6 +61,7 @@ function retriveGeneral (a : Object, b: string, c : string) : void {
 function switchContent (this : any) : void {
     let options : HTMLCollectionOf<HTMLElement> = document.getElementsByClassName("toggle")! as HTMLCollectionOf<HTMLElement>
     let contents : HTMLCollectionOf<HTMLDivElement> = document.getElementsByClassName("contProp")! as HTMLCollectionOf<HTMLDivElement>;
+    
     for (let i = 0; i < contents.length; i++) {
         if (contents[i].id === `${this.id}-info`) {
             contents[i].style.display = "block";
@@ -68,6 +69,7 @@ function switchContent (this : any) : void {
             contents[i].style.display = "none";
         }
     }
+
     for (let i = 0; i < options.length; i++) {
         if (options[i].id === this.id) {
             this.dataset.active = "active";
@@ -75,9 +77,33 @@ function switchContent (this : any) : void {
             options[i].dataset.active = "inactive";
         }
     }
+
+    overlayOff();
 }
 
-function retriveBranding(z: string, a : string, b : HTMLDivElement, e : string, f : Function, c : string, d? : string) :void {
+function overlayOn (this:any): void {
+    const infoTitleDisplay: HTMLDivElement = document.getElementById("infoTitleDisplay")! as HTMLDivElement;
+    const infoTitleDiv: HTMLDivElement = document.getElementById("infoTitleDiv")! as HTMLDivElement;
+    const infoTitle: HTMLHeadingElement = document.getElementById("infoTitle")! as HTMLHeadingElement;
+
+    if (this.dataset.active == "inactive") {
+        infoTitleDisplay.style.display = "block";
+        infoTitleDiv.style.display = "block";
+        infoTitle.innerHTML = this.innerHTML;
+    }
+}
+
+function overlayOff (this:any): void {
+    const infoTitleDisplay: HTMLDivElement = document.getElementById("infoTitleDisplay")! as HTMLDivElement;
+    const infoTitleDiv: HTMLDivElement = document.getElementById("infoTitleDiv")! as HTMLDivElement;
+    const infoTitle: HTMLHeadingElement = document.getElementById("infoTitle")! as HTMLHeadingElement;
+
+    infoTitleDisplay.style.display = "none";
+    infoTitleDiv.style.display = "none";
+    infoTitle.innerHTML = "";
+}
+
+function retriveBranding(z: string, a: string, b: HTMLDivElement, e: string, f: Function, c: string, d?: string): void {
     const req = new XMLHttpRequest();
     req.open("GET", a, true);
     req.send();
@@ -89,6 +115,8 @@ function retriveBranding(z: string, a : string, b : HTMLDivElement, e : string, 
             let h4 : HTMLHeadingElement = document.createElement("h4");
             let h5 : HTMLHeadingElement = document.createElement("h5");
             h5.onclick = switchContent;
+            h5.onmouseover = overlayOn;
+            h5.onmouseout = overlayOff;
             for (let [key, value] of Object.entries(actual)) {
                 //navbar
                 if (d) {
@@ -126,19 +154,19 @@ function retriveBranding(z: string, a : string, b : HTMLDivElement, e : string, 
 
 function mainLoader () : void {
     const cpus : HTMLDivElement = document.getElementById("cpus")! as HTMLDivElement;
-    const cpu : string = '../../../tmp/cpuInfo.json';
+    const cpu : string = '../tmp/cpuInfo.json';
     const gpus : HTMLDivElement = document.getElementById("gpus")! as HTMLDivElement;
-    const gpu : string = '../../../tmp/gpuInfo.json';
+    const gpu : string = '../tmp/gpuInfo.json';
     const sys : HTMLDivElement = document.getElementById("sysInfo")! as HTMLDivElement;
-    const os : string = '../../../tmp/os.json';
+    const os : string = '../tmp/os.json';
     const boardInfo : HTMLDivElement = document.getElementById("boardInfo")! as HTMLDivElement;
-    const board : string = '../../../tmp/board.json';
+    const board : string = '../tmp/board.json';
     const biosInfo : HTMLDivElement = document.getElementById("biosInfo")! as HTMLDivElement;
-    const bios : string = '../../../tmp/bios.json';
+    const bios : string = '../tmp/bios.json';
     const ramInfo : HTMLDivElement = document.getElementById("ram")! as HTMLDivElement;
     const ramInfoGen : HTMLDivElement = document.getElementById("genRam")! as HTMLDivElement;
-    const ramGeneral : string = '../../../tmp/generalMem.json';
-    const banks : string = '../../../tmp/banks.json';
+    const ramGeneral : string = '../tmp/generalMem.json';
+    const banks : string = '../tmp/banks.json';
 
     retriveBranding("none", cpu, cpus, "cpu", retriveGeneral , "Manufacturer", "Brand");
     retriveBranding("none", gpu, gpus, "gpu", retriveGeneral , "Vendor", "Model");

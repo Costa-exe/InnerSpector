@@ -69,6 +69,7 @@ html::-webkit-scrollbar-thumb {
 .key {
   display: flex;
   justify-content: right;
+  font-weight: 700;
 }
 
 .prop {
@@ -78,6 +79,7 @@ html::-webkit-scrollbar-thumb {
   font-size: 20px;
   grid-template-columns: repeat(2, 1fr);
   padding: 10px;
+  align-items: center;
 }
 .prop:nth-child(odd) {
   background-color: rgb(177, 177, 177);
@@ -125,6 +127,30 @@ html::-webkit-scrollbar-thumb {
 }
 .toggle[data-active=inactive]:hover {
   font-weight: 700;
+}
+
+#infoTitleDisplay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 150px;
+  right: 0;
+  bottom: 0;
+  background-color: #141414;
+  opacity: 70%;
+  display: none;
+}
+
+#infoTitleDiv {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 150px;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  color: #ffffff;
+  display: none;
 }
 
 .value {
