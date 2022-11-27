@@ -154,19 +154,19 @@ function retriveBranding(z, a, b, e, f, c, d) {
 }
 function mainLoader() {
     const cpus = document.getElementById("cpus");
-    const cpu = '../tmp/cpuInfo.json';
+    const cpu = '../../../tmp/cpuInfo.json';
     const gpus = document.getElementById("gpus");
-    const gpu = '../tmp/gpuInfo.json';
+    const gpu = '../../../tmp/gpuInfo.json';
     const sys = document.getElementById("sysInfo");
-    const os = '../tmp/os.json';
+    const os = '../../../tmp/os.json';
     const boardInfo = document.getElementById("boardInfo");
-    const board = '../tmp/board.json';
+    const board = '../../../tmp/board.json';
     const biosInfo = document.getElementById("biosInfo");
-    const bios = '../tmp/bios.json';
+    const bios = '../../../tmp/bios.json';
     const ramInfo = document.getElementById("ram");
     const ramInfoGen = document.getElementById("genRam");
-    const ramGeneral = '../tmp/generalMem.json';
-    const banks = '../tmp/banks.json';
+    const ramGeneral = '../../../tmp/generalMem.json';
+    const banks = '../../../tmp/banks.json';
     retriveBranding("none", cpu, cpus, "cpu", retriveGeneral, "Manufacturer", "Brand");
     retriveBranding("none", gpu, gpus, "gpu", retriveGeneral, "Vendor", "Model");
     retriveBranding("block", os, sys, "os", retriveGeneral, "OS");

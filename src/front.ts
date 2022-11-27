@@ -154,19 +154,19 @@ function retriveBranding(z: string, a: string, b: HTMLDivElement, e: string, f: 
 
 function mainLoader () : void {
     const cpus : HTMLDivElement = document.getElementById("cpus")! as HTMLDivElement;
-    const cpu : string = '../tmp/cpuInfo.json';
+    const cpu : string = '../../../tmp/cpuInfo.json';
     const gpus : HTMLDivElement = document.getElementById("gpus")! as HTMLDivElement;
-    const gpu : string = '../tmp/gpuInfo.json';
+    const gpu : string = '../../../tmp/gpuInfo.json';
     const sys : HTMLDivElement = document.getElementById("sysInfo")! as HTMLDivElement;
-    const os : string = '../tmp/os.json';
+    const os : string = '../../../tmp/os.json';
     const boardInfo : HTMLDivElement = document.getElementById("boardInfo")! as HTMLDivElement;
-    const board : string = '../tmp/board.json';
+    const board : string = '../../../tmp/board.json';
     const biosInfo : HTMLDivElement = document.getElementById("biosInfo")! as HTMLDivElement;
-    const bios : string = '../tmp/bios.json';
+    const bios : string = '../../../tmp/bios.json';
     const ramInfo : HTMLDivElement = document.getElementById("ram")! as HTMLDivElement;
     const ramInfoGen : HTMLDivElement = document.getElementById("genRam")! as HTMLDivElement;
-    const ramGeneral : string = '../tmp/generalMem.json';
-    const banks : string = '../tmp/banks.json';
+    const ramGeneral : string = '../../../tmp/generalMem.json';
+    const banks : string = '../../../tmp/banks.json';
 
     retriveBranding("none", cpu, cpus, "cpu", retriveGeneral , "Manufacturer", "Brand");
     retriveBranding("none", gpu, gpus, "gpu", retriveGeneral , "Vendor", "Model");
